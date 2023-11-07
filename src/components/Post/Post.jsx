@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 const Post = ({post}) => {
-    const {title, body} = post;
+    const {id, title, body} = post;
     const postStyle = {
         border: '2px solid purple',
         padding: '5px',
@@ -10,8 +12,9 @@ const Post = ({post}) => {
     }
     return (
         <div style={postStyle}>
+            <h1>Post ID: {id}</h1>
             <h1>{title}</h1>
-            <p>{body}</p>
+            <Link to={`/posts/${id}`}>Details</Link>
         </div>
     );
 };
